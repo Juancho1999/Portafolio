@@ -1,0 +1,76 @@
+.banner-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 15px auto;
+  padding: 20px;
+}
+
+/* Imágenes responsivas */
+.banner-container img {
+  max-width: 100%; /* Asegura que la imagen no desborde */
+  height: auto; /* Mantiene la proporción */
+}
+
+/* Estilos base */
+.heading,
+.heading-name {
+  font-size: 2.2rem;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Efecto máquina de escribir */
+.typewriter h1 {
+  color: #2a5ce5;
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-start infinite;
+}
+
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+      border-color: transparent;
+  }
+  20% {
+      border-color: orange;
+  }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .banner-container {
+      padding: 10px; /* Reduce el padding en dispositivos pequeños */
+  }
+
+  .banner-container img {
+      max-height: 250px; /* Limita la altura de la imagen en móviles */
+  }
+
+  .heading,
+  .heading-name {
+      font-size: 1.8rem; /* Reduce el tamaño de texto */
+  }
+
+  .typewriter h1 {
+      font-size: 1.4rem; /* Reduce el texto del efecto de escritura */
+  }
+
+  /* Asegura que los elementos se alineen correctamente en móviles */
+  .banner-container .col-md-6,
+  .banner-container .col-md-4 {
+      text-align: center; /* Centra el texto e imagen */
+      margin-bottom: 15px; /* Añade espacio entre bloques */
+  }
+}

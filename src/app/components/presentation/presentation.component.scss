@@ -1,0 +1,41 @@
+.home-about-section{
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: 35px;
+    .purple{
+        color: #2a5ce5;
+    }
+}
+
+.home-about-description{
+    h1{
+        font-size: 2.6em;
+        padding-bottom: 0.7em;
+    }
+}
+
+.myAvtar{
+    img{
+        margin: 80px;
+        margin-left: 200px;
+        border-radius: 1000px;
+    }
+}
+
+.findme{
+    padding: 3rem 2rem!important;
+    div.col{
+        flex: 0 0 0% !important;
+        padding: 3rem 0.2rem!important;
+        .btn-whatsapp{
+            color: #25D366;
+        }
+        .btn-ig{
+            color: #C13584;
+        }
+        .btn-linkedin{
+            color: #0e76a8;
+        }
+    }
+}
