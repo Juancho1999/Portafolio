@@ -13,6 +13,14 @@ app.use(cors({ origin: 'https://mi-frontend.onrender.com' }));
 app.use(express.json());  // <-- Este middleware permite recibir JSON
 app.use(express.urlencoded({ extended: true }));
 
+// Servir los archivos estáticos de Angular desde la carpeta dist/
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Para cualquier otra ruta, devolver el index.html de Angular
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
+
 // Ruta para manejar el formulario de contacto
 app.post('/send-mail', async (req, res) => {
      // Aquí ahora puedes acceder a los datos JSON directamente
