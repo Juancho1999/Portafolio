@@ -39,3 +39,23 @@
         }
     }
 }
+
+/* Media query para pantallas móviles */
+@media (max-width: 768px) {
+    .myAvtar {
+        margin: 0; /* Eliminar márgenes */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .myAvtar img {
+        margin: 0; /* Eliminar márgenes adicionales */
+        max-width: 100%; /* Ajustar el tamaño de la imagen */
+        height: auto;
+    }
+
+    .home-about-description {
+        text-align: center; /* Opcional: Centrar el texto también */
+    }
+}

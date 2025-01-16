@@ -1,30 +1,81 @@
 <div class="container contact-form">
-    <div class="contact-image">
-        <img src="assets/images/rocket-contact.png" alt="rockH"/>
-    </div>
-    <form method="post">
-        <h3>Contactate Conmigo!</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" name="txtName" class="form-control" placeholder="Nombre *" value="" />
-                </div>
-                <div class="form-group">
-                    <input type="text" name="txtEmail" class="form-control" placeholder="Email *" value="" />
-                </div>
-                <div class="form-group">
-                    <input type="text" name="txtPhone" class="form-control" placeholder="Numero de Telefono *" value="" />
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <textarea name="txtMsg" class="form-control" placeholder="Tu Mensaje *" style="width: 100%; height: 150px;"></textarea>
-                </div>
-            </div>
-        </div>
-        <!-- Botón se mantiene aquí al final -->
+  <div class="contact-image">
+    <img src="assets/images/rocket-contact.png" alt="rockH" />
+  </div>
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    <h3>Contactate Conmigo!</h3>
+    <div class="row">
+      <div class="col-md-6">
         <div class="form-group">
-            <input type="submit" name="btnSubmit" class="btnContact" value="Enviar Mensaje" />
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="formData.name"
+            #name="ngModel"
+            class="form-control"
+            placeholder="Nombre *"
+            required
+          />
+          <div *ngIf="name.invalid && name.touched" class="error">
+            El nombre es obligatorio.
+          </div>
         </div>
-    </form>
+        <div class="form-group">
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="formData.email"
+            #email="ngModel"
+            class="form-control"
+            placeholder="Email *"
+            required
+            email
+          />
+          <div *ngIf="email.invalid && email.touched" class="error">
+            <span *ngIf="email.errors?.['required']">El email es obligatorio.</span>
+            <span *ngIf="email.errors?.['email']">El email no tiene un formato válido.</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            name="phone"
+            [(ngModel)]="formData.phone"
+            #phone="ngModel"
+            class="form-control"
+            placeholder="Número de Teléfono *"
+            required
+          />
+          <div *ngIf="phone.invalid && phone.touched" class="error">
+            <span *ngIf="phone.errors?.['required']">El número de teléfono es obligatorio.</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <textarea
+            name="message"
+            [(ngModel)]="formData.message"
+            #message="ngModel"
+            class="form-control"
+            placeholder="Tu Mensaje *"
+            style="width: 100%; height: 150px;"
+            required
+          ></textarea>
+          <div *ngIf="message.invalid && message.touched" class="error">
+            <span *ngIf="message.errors?.['required']">El mensaje es obligatorio.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button
+        type="submit"
+        [disabled]="!contactForm.valid"
+        class="btnContact"
+      >
+        Enviar Mensaje
+      </button>
+    </div>
+  </form>
 </div>

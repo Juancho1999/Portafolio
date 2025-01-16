@@ -5,3 +5,22 @@ body{
 }
 
 
+// Personaliza la posición
+.toast-top-center {
+    top: 20%; // Ajusta según tus necesidades
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  // Personaliza los colores y bordes
+  .toast-success {
+    background-color: #4caf50 !important; // Verde éxito
+    color: white !important;
+    border-radius: 8px !important;
+  }
+  
+  .toast-error {
+    background-color: #f44336 !important; // Rojo error
+    color: white !important;
+    border-radius: 8px !important;
+  }
