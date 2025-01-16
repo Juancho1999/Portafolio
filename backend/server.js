@@ -4,12 +4,12 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json());
 // Configuración del middleware
-app.use(cors());
+app.use(cors({ origin: 'https://mi-frontend.onrender.com' }));
 app.use(express.json());  // <-- Este middleware permite recibir JSON
 app.use(express.urlencoded({ extended: true }));
 
@@ -25,8 +25,10 @@ app.post('/send-mail', async (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'Gmail', // O puedes usar otro servicio de correo
         auth: {
-            user: 'iralajuan099@gmail.com', // mi correo electrónico
-            pass: 'nuerkapjxardorap' // Contraseña o App Password
+            user: process.env.EMAIL_USER,  // Email desde las variables de entorno
+            pass: process.env.EMAIL_PASS   // Contraseña desde las variables de entorno
+            //user: 'mi mail', // mi correo electrónico
+            //pass: 'apppassword' // Contraseña o App Password
         }
     });
 

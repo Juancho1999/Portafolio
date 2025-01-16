@@ -38,6 +38,11 @@
 </nav>-->
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
   <div class="container">
+    <!-- Logo del sitio -->
+    <a class="navbar-brand" routerLink="/">
+      <img src="assets/images/icon.png" alt="Logo" class="logo">
+    </a>
+
     <!-- Botón para móviles -->
     <button
       class="navbar-toggler"
@@ -60,17 +65,17 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active"(click)="closeMenu(); scrollToTop()">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active" (click)="closeMenu(); scrollToTop()">
             <i class="fa fa-newspaper fa-xs"></i> Acerca de mí
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/redes" routerLinkActive="active"(click)="closeMenu(); scrollToTop()">
+          <a class="nav-link" routerLink="/redes" routerLinkActive="active" (click)="closeMenu(); scrollToTop()">
             <i class="fa fa-users"></i> Redes Sociales
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contacto" routerLinkActive="active"(click)="closeMenu(); scrollToTop()">
+          <a class="nav-link" routerLink="/contacto" routerLinkActive="active" (click)="closeMenu(); scrollToTop()">
             <i class="fa fa-user fa-xs"></i> Contacto
           </a>
         </li>
@@ -78,4 +83,3 @@
     </div>
   </div>
 </nav>
-
