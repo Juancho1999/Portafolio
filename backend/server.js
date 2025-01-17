@@ -9,17 +9,9 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(bodyParser.json());
 // Configuración del middleware
-//app.use(cors({ origin: 'https://mi-frontend.onrender.com' }));
+app.use(cors());
 app.use(express.json());  // <-- Este middleware permite recibir JSON
 app.use(express.urlencoded({ extended: true }));
-
-// Servir los archivos estáticos de Angular desde la carpeta dist/
-app.use(express.static(path.join(__dirname, 'dist')));
-
-// Para cualquier otra ruta, devolver el index.html de Angular
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
 
 // Ruta para manejar el formulario de contacto
 app.post('/send-mail', async (req, res) => {
@@ -33,10 +25,10 @@ app.post('/send-mail', async (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'Gmail', // O puedes usar otro servicio de correo
         auth: {
-            user: process.env.EMAIL_USER,  // Email desde las variables de entorno
-            pass: process.env.EMAIL_PASS   // Contraseña desde las variables de entorno
-            //user: 'mi mail', // mi correo electrónico
-            //pass: 'apppassword' // Contraseña o App Password
+            //user: process.env.EMAIL_USER,  // Email desde las variables de entorno
+            //pass: process.env.EMAIL_PASS   // Contraseña desde las variables de entorno
+            user: 'iralajuan099@gmail.com', // mi correo electrónico
+            pass: 'nuerkapjxardorap' // Contraseña o App Password
         }
     });
 
