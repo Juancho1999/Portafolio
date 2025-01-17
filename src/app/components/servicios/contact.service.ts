@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ContactService {
 
-  private apiUrl = 'http://mi-backend.onrender/send-mail'; // Cambia esto a tu endpoint real
+  private apiUrl = 'http://localhost:3000/send-mail'; // Cambia esto a tu endpoint real
 
   constructor(private http: HttpClient) { }
 
