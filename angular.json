@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Porfolio:build:production"
+              "buildTarget": "my-porfolio:build:production"
             },
             "development": {
-              "buildTarget": "Porfolio:build:development"
+              "buildTarget": "my-porfolio:build:development"
             }
           },
           "defaultConfiguration": "development"
