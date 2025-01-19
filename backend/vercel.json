@@ -18,10 +18,10 @@
       }
     ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/$1"
-      }
+        {
+            "src": "/send-mail",
+            "dest": "/server.js"
+        }
     ]
   }
   
