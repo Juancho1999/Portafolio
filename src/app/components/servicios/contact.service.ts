@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ContactService {
 
-  private apiUrl = 'https://back-folio.vercel.app/send-mail'; // Cambia esto a tu endpoint real
+  private apiUrl = 'https://portafolio-ten-vert-85.vercel.app/send-mail'; // Cambia esto a tu endpoint real
 
   constructor(private http: HttpClient) { }
 
