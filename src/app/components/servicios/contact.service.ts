@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ContactService {
 
-  private apiUrl = 'http://juanirala.vercel.app/sendMail.php'; // Asegúrate de cambiar la URL correcta // Cambia esto a tu endpoint real
+  private apiUrl = 'https://juanirala.vercel.app/sendMail.php'; // Asegúrate de cambiar la URL correcta // Cambia esto a tu endpoint real
 
   constructor(private http: HttpClient) { }
 
